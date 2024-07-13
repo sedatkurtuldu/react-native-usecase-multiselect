@@ -8,8 +8,9 @@ const MultiSelectItem = ({ checkedText } : { checkedText: string }) => {
   const { Data, setData } = useDataStore();
 
   const removeSelectedItem = () => {
+
     const updatedData = Data.map(item => item.name === checkedText ? { ...item, isChecked: !item.isChecked } : item );
-    
+
     setData(updatedData);
   }
 
