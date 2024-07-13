@@ -1,15 +1,14 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import Checkbox from "expo-checkbox";
 import { useQuery } from "@tanstack/react-query";
 import { fetchEpisodeCount } from "../../service/service";
 import { ListComponentProps } from "../../app/types/types";
 import BoldStyle from "./BoldStyle";
-import { useDataStore, useIsCheckedStore } from "../../app/store";
+import { useDataStore } from "../../app/store";
 
 const ListComponent = ({ data } : ListComponentProps) => {
   const { Data, setData } = useDataStore();
-  const { isChecked, setIsChecked } = useIsCheckedStore();
 
   const { data: episodeCount } : { data: number } = useQuery({
     queryKey: ['epsiodeCount', data.id],
@@ -17,9 +16,7 @@ const ListComponent = ({ data } : ListComponentProps) => {
   });
   
   const handleIsChecked = () => {
-    setIsChecked(!isChecked);
-
-    const updatedData = Data.map(item => item.name === data.name ? { ...item, isChecked: !isChecked } : item);
+    const updatedData = Data.map(item => item.name === data.name ? { ...item, isChecked: !item.isChecked } : item);
     
     setData(updatedData);
   };
@@ -27,7 +24,7 @@ const ListComponent = ({ data } : ListComponentProps) => {
   return (
     <TouchableOpacity activeOpacity={0.9} onPress={handleIsChecked} className="flex-row h-20 items-center gap-2">
       <View>
-        <Checkbox color={isChecked ? "#0075FF" : ""} value={isChecked} onValueChange={handleIsChecked} />
+        <Checkbox color={data.isChecked ? "#0075FF" : ""} value={data.isChecked} onValueChange={handleIsChecked} />
       </View>
       <View>
         <Image className="w-12 h-12 rounded-lg" source={{ uri: data.image }} />
@@ -40,4 +37,4 @@ const ListComponent = ({ data } : ListComponentProps) => {
   );
 };
 
-export default ListComponent;
+export default ListComponent;
