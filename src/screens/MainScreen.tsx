@@ -35,6 +35,8 @@ const MainScreen = () => {
 
   const handleFilter = (text: string) => {
     setFilteredText(text);
+    setIsSelectOpen(true);
+    setHidden("");
 
     if (text.trim() === "") {
       const checkedItems = Data.filter((item: Character) => item.isChecked);

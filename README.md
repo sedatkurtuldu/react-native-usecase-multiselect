@@ -1,6 +1,6 @@
 # React Native MultiSelect Uygulaması
 
-Bu proje, React Native kullanarak geliştirilmiş bir multiselect örneğidir. Projede, Expo platformu üzerinde çalışan bir uygulama bulunmaktadır.
+Bu proje, React Native kullanarak geliştirilmiş bir multiselect örneğidir. Projede, Expo platformu üzerinde çalışan bir uygulama bulunmaktadır. Uygulama, Rick and Morty API'sini kullanarak karakterlerin listelendiği bir multiselect özelliği sunmaktadır.
 
 ## Teknolojiler
 
