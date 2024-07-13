@@ -12,6 +12,7 @@ Proje aşağıdaki teknolojileri kullanmaktadır:
 - **Expo Checkbox**: Checkbox bileşenlerini kolayca entegre etmek için kullanılan kütüphane.
 - **Expo Status Bar**: Uygulama içindeki durum çubuğunu yönetmek için kullanılan kütüphane.
 - **Tailwind CSS**: Hızlı ve kolay CSS stilleri oluşturmak için kullanılan kütüphane.
+- **TypeScript**: Geliştirme sürecinde kullanılan tip güvenliği sağlayan programlama dilidir.
 
 ## Başlangıç
 
