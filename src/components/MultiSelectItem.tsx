@@ -15,7 +15,7 @@ const MultiSelectItem = ({ checkedText } : { checkedText: string }) => {
   }
 
   return (
-    <View className="bg-slate-200 p-1.5 rounded-lg mr-1">
+    <View className="bg-slate-200 p-1.5 rounded-lg ml-1.5 my-1">
       <View className="flex-row items-center justify-center gap-x-1">
         <Text className="text-slate-700">{checkedText}</Text>
         <TouchableOpacity onPress={removeSelectedItem} activeOpacity={0.8} className="bg-slate-400 rounded p-0.5">
